@@ -13,7 +13,7 @@ RUN npm install
 # RUN npm install --only=production
 
 # Bundle app source
-COPY ../build/ ./
+COPY . .
 
 EXPOSE 8999
 CMD [ "npm", "run", "start"]

@@ -8,8 +8,8 @@
   },
   "scripts": {
     "build": "tsc -w -pretty",
-    "test": "node build\\mini-blockchain.js",
-    "start": "node build\\server.js"
+    "test": "node build//mini-blockchain.js",
+    "start": "node build//server.js"
   },
   "author": "Michiel Kalle",
   "license": "ISC",

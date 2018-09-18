@@ -41,7 +41,14 @@ yarn run start
 ```
 
 ## Run docker
-Create container
+Create container, run it.
+Connect on port: 49160
 ```
-docker build -t michielkalle/mini-blockchain
+docker build -t michielkalle/mini-blockchain .
+docker run -p 49160:8999 michielkalle/mini-blockchain
+```
+
+bash
+```
+docker exec -it michielkalle/mini-blockchain /bin/bash
 ```
