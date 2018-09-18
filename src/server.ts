@@ -25,6 +25,7 @@ wss.on('connection', (ws: WebSocket) => {
         console.log('received transaction...');
         console.log('generate block...');
 
+        // TODO create variable difficulty
         miniBlockchain.addBlock(new Block(new Date(), new Transaction(message), "000"));
 
         console.log("Is blockchain valid? " + miniBlockchain.checkValid());
