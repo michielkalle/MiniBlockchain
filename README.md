@@ -1,5 +1,6 @@
-# How to install
+## Mini Blockchain
 
+## How to install
 * Install npm
 * Install yarn
 * Install docker
@@ -9,7 +10,7 @@ Create node_modules
 npm init
 ```
 
-# Install typescript and crypto-js and sockets
+## Install typescript and crypto-js and sockets
 Install all dependencies
 ```
 yarn add typescript
@@ -24,23 +25,23 @@ or
 yarn install
 ```
 
-# Run watcher:
+## Run watcher:
 ```
 yarn run build
 ```
 
-# Run tests: created test blocks
+## Run tests: created test blocks
 ```
 yarn run test
 ```
 
-# Run mini-blockchain
+## Run mini-blockchain
 ```
 yarn run start
 ```
 
-# Run docker
+## Run docker
 Create container
 ```
-docker build -t
+docker build -t michielkalle/mini-blockchain
 ```
