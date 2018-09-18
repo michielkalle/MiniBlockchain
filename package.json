@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "tsc -w -pretty",
-    "test": "node build//mini-blockchain.js",
+    "test": "node build//test.js",
     "start": "node build//server.js"
   },
   "author": "Michiel Kalle",

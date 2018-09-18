@@ -1,4 +1,5 @@
-import {Block} from './block'
+import { Block } from './block'
+import { Transaction } from './transaction';
 
 export class Blockchain {
     chain: Block[];
@@ -8,7 +9,7 @@ export class Blockchain {
     }
 
     createGenesis() {
-        return new Block(new Date(), {name: 'Genesis block', amount: 0}, "0")
+        return new Block(new Date(), new Transaction({name: 'Genesis block', amount: 0}), "0")
     }
 
     latestBlock() {
