@@ -1,20 +1,24 @@
 import { SHA256 } from 'crypto-js';
 import { Transaction } from './transaction';
 
+/**
+ * The block where transactions are saved
+ * and the proof of work is done
+ */
 export class Block {
     index: number;
     timestamp: Date;
-    data: Transaction;
+    transactions: Transaction[];
     previousHash: string;
     hash: string;
     nonce: number;
     attempts: number;
     difficulty: string;
 
-    constructor(timestamp: Date, data: Transaction, difficulty: string) {
+    constructor(timestamp: Date, transactions: Transaction[], difficulty: string) {
         this.index = 0;
         this.timestamp = timestamp;
-        this.data = data;
+        this.transactions = transactions;
         this.previousHash = "";
         this.nonce = 0;
         this.attempts = 0;
@@ -32,7 +36,7 @@ export class Block {
     }
 
     calculateHash() {
-        return SHA256(this.index + this.previousHash + this.timestamp + this.data + this.nonce).toString();
+        return SHA256(this.index + this.previousHash + this.timestamp + this.transactions + this.nonce).toString();
     }
 
     generateRandomNumber() {

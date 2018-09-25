@@ -1,6 +1,10 @@
 import { Block } from './block'
 import { Transaction } from './transaction';
 
+/**
+ * The blockchain holding the blocks
+ * Here we can check for a valid blockchain
+ */
 export class Blockchain {
     chain: Block[];
 
@@ -9,7 +13,7 @@ export class Blockchain {
     }
 
     createGenesis() {
-        return new Block(new Date(), new Transaction({name: 'Genesis block', amount: 0}), "0")
+        return new Block(new Date(), [new Transaction({name: 'Genesis block', amount: 0})], "0")
     }
 
     latestBlock() {
@@ -46,11 +50,11 @@ export class Blockchain {
 
     log(block: Block) {
         console.log('---------------------------------------');
-        console.log('Succesfull generated: #' + block.index);
-        console.log('Difficulty: ' + block.difficulty);
-        console.log('Hash:' + block.hash);
-        console.log('Attempts: ' + block.attempts);
-        console.log('Nonce: ' + block.nonce);
+        console.log('| Succesfull generated: #' + block.index);
+        console.log('| Difficulty: ' + block.difficulty);
+        console.log('| Hash: ' + block.hash);
+        console.log('| Attempts: ' + block.attempts);
+        console.log('| Nonce: ' + block.nonce);
         console.log('---------------------------------------');
     }
 }
