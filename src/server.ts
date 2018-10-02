@@ -32,13 +32,13 @@ wss.on('connection', (ws: WebSocket) => {
 
         if (type === 'ADDPEER') {
             peers.addPeer(messageObject.port);
-        } else if (type === 'REMOVEPEER') {
-            //TODO remove peer
         } else if (type.endsWith('TRANSACTION')) {
             //send transaction over the network, TODO create variable difficulty
             var block = new Block(new Date(), [new Transaction(message)], "00000");
 
             //example to create new transaction over socket: {"type": "CREATETRANSACTION", "data": "123"}
+            //only for this type transaction will be send over the network, or we get recursions
+            console.log('true?', type === 'CREATETRANSACTION');
             if (type === 'CREATETRANSACTION') {
                 //broadcast to the network
                 broadcast.sendTransaction(peers.getPeers(), block);
