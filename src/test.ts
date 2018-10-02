@@ -1,5 +1,5 @@
-import { Block } from './block'
-import { Blockchain } from './blockchain'
+import { Block } from './block';
+import { Blockchain } from './blockchain';
 import { Transaction } from './transaction';
 
 let miniBlockchain = new Blockchain();
